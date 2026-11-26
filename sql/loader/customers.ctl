@@ -1,0 +1,6 @@
+OPTIONS (SKIP=1)
+LOAD DATA
+INFILE 'customers.csv'
+APPEND INTO TABLE customers
+FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' TRAILING NULLCOLS
+(customer_id, customer_name, segment)

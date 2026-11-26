@@ -1,0 +1,6 @@
+step,rows_before,rows_after,rows_affected
+Remove exact duplicate rows,10054,9994,60
+Drop rows with unrecoverable invalid Order Date,9994,9992,2
+Drop rows with negative or zero Sales,9992,9974,18
+Drop rows with missing Profit,9974,9966,8
+Drop rows with invalid Quantity/Discount,9966,9966,0

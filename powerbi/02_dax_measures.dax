@@ -1,0 +1,75 @@
+// =====================================================================
+// DAX MEASURES : Sales Performance Dashboard
+// Table names: Sales (fact), 'Date' (calendar). Create 'Date' first (section 0).
+// Tip: ek empty table "_Measures" banao aur saare measures usme rakho.
+// =====================================================================
+
+// ---- 0. Calendar table (Modeling > New table) -----------------------
+Date =
+ADDCOLUMNS (
+    CALENDAR ( DATE ( 2022, 1, 1 ), DATE ( 2025, 12, 31 ) ),
+    "Year",        YEAR ( [Date] ),
+    "Quarter",     "Q" & QUARTER ( [Date] ),
+    "Month No",    MONTH ( [Date] ),
+    "Month",       FORMAT ( [Date], "MMM" ),
+    "Year-Month",  FORMAT ( [Date], "YYYY-MM" )
+)
+// Then: Mark as date table (Date[Date]); sort Date[Month] by Date[Month No];
+// Relationship: Date[Date] 1 --> * Sales[Order Date]
+
+// ---- 1. Core KPIs ---------------------------------------------------
+Total Sales      = SUM ( Sales[Sales] )
+Total Profit     = SUM ( Sales[Profit] )
+Total Orders     = DISTINCTCOUNT ( Sales[Order ID] )
+Total Quantity   = SUM ( Sales[Quantity] )
+Profit Margin %  = DIVIDE ( [Total Profit], [Total Sales] )
+Avg Order Value  = DIVIDE ( [Total Sales], [Total Orders] )
+
+// ---- 2. Time intelligence --------------------------------------------
+Sales LY   = CALCULATE ( [Total Sales], SAMEPERIODLASTYEAR ( 'Date'[Date] ) )
+Sales YoY % = DIVIDE ( [Total Sales] - [Sales LY], [Sales LY] )
+Sales PM   = CALCULATE ( [Total Sales], DATEADD ( 'Date'[Date], -1, MONTH ) )
+Sales MoM % = DIVIDE ( [Total Sales] - [Sales PM], [Sales PM] )
+Sales YTD  = TOTALYTD ( [Total Sales], 'Date'[Date] )
+
+// ---- 3. Ranking / share -----------------------------------------------
+Product Sales Rank =
+RANKX ( ALL ( Sales[Product Name] ), [Total Sales], , DESC, Skip )
+
+Sales % of Total =
+DIVIDE ( [Total Sales], CALCULATE ( [Total Sales], ALLSELECTED () ) )
+
+Is Loss Making = IF ( [Total Profit] < 0, 1, 0 )
+
+// ---- 4. Dynamic titles (visual > Title > fx > Field value) -------------
+Selected Category =
+IF ( ISFILTERED ( Sales[Category] ),
+     CONCATENATEX ( VALUES ( Sales[Category] ), Sales[Category], ", " ),
+     "All Categories" )
+
+Selected Region =
+IF ( ISFILTERED ( Sales[Region] ),
+     CONCATENATEX ( VALUES ( Sales[Region] ), Sales[Region], ", " ),
+     "All Regions" )
+
+Title Monthly Trend =
+"Monthly Sales Trend | " & [Selected Category] & " | " & [Selected Region]
+
+Title Top Products =
+"Top 10 Products by Sales | " & [Selected Region] & " | Total: " & FORMAT ( [Total Sales], "$#,##0" )
+
+Title Region =
+"Sales by Region | " & [Selected Category]
+
+// ---- 5. Conditional formatting helpers -----------------------------------
+Margin Color =
+SWITCH ( TRUE (),
+         [Profit Margin %] < 0,    "#DC2626",   // red
+         [Profit Margin %] < 0.10, "#F59E0B",   // amber
+         "#059669" )                            // green
+
+KPI Subtitle Sales = "vs LY: " & FORMAT ( [Sales YoY %], "+0.0%;-0.0%;0.0%" )
+
+// ---- 6. Tooltip measures (use on a Tooltip page) --------------------------
+Tooltip Margin Text = "Margin: " & FORMAT ( [Profit Margin %], "0.0%" )
+Tooltip Orders Text = "Orders: " & FORMAT ( [Total Orders], "#,##0" ) & " | AOV: " & FORMAT ( [Avg Order Value], "$#,##0" )

@@ -1,0 +1,43 @@
+product_id,product_name,category,sub_category
+FUR-BO-10000009,5-Shelf Wooden Bookcase,Furniture,Bookcases
+FUR-BO-10000010,Metal Display Bookcase,Furniture,Bookcases
+FUR-BO-10000011,Corner Bookcase Unit,Furniture,Bookcases
+FUR-CH-10000001,Ergonomic Mesh Office Chair,Furniture,Chairs
+FUR-CH-10000002,Executive Leather Chair,Furniture,Chairs
+FUR-CH-10000003,Task Chair with Arms,Furniture,Chairs
+FUR-CH-10000004,Conference Room Chair,Furniture,Chairs
+FUR-FU-10000012,LED Desk Lamp,Furniture,Furnishings
+FUR-FU-10000013,Decorative Wall Clock,Furniture,Furnishings
+FUR-FU-10000014,Desk Organizer Set,Furniture,Furnishings
+FUR-FU-10000015,Floor Mat Anti-Fatigue,Furniture,Furnishings
+FUR-TA-10000005,Oak Conference Table,Furniture,Tables
+FUR-TA-10000006,Adjustable Standing Desk,Furniture,Tables
+FUR-TA-10000007,Round Meeting Table,Furniture,Tables
+FUR-TA-10000008,Folding Training Table,Furniture,Tables
+OFF-AP-10000027,Compact Paper Shredder,Office Supplies,Appliances
+OFF-AP-10000028,Desktop Air Purifier,Office Supplies,Appliances
+OFF-AP-10000029,Electric Stapler Pro,Office Supplies,Appliances
+OFF-AR-10000025,Professional Marker Set,Office Supplies,Art
+OFF-AR-10000026,Sketch Pencil Collection,Office Supplies,Art
+OFF-BI-10000016,Heavy Duty 3-Ring Binder,Office Supplies,Binders
+OFF-BI-10000017,Presentation Binder Pack,Office Supplies,Binders
+OFF-BI-10000018,Binder Index Dividers,Office Supplies,Binders
+OFF-PA-10000019,Premium Copy Paper Ream,Office Supplies,Paper
+OFF-PA-10000020,Recycled Printer Paper Box,Office Supplies,Paper
+OFF-PA-10000021,Colored Cardstock Pack,Office Supplies,Paper
+OFF-ST-10000022,Stackable File Storage Box,Office Supplies,Storage
+OFF-ST-10000023,Wire Mesh Organizer Rack,Office Supplies,Storage
+OFF-ST-10000024,Lockable File Cabinet,Office Supplies,Storage
+TEC-AC-10000034,Wireless Ergonomic Mouse,Technology,Accessories
+TEC-AC-10000035,Mechanical Keyboard,Technology,Accessories
+TEC-AC-10000036,USB-C Docking Hub,Technology,Accessories
+TEC-AC-10000037,External SSD 1TB,Technology,Accessories
+TEC-CO-10000038,Laser Copier Workstation,Technology,Copiers
+TEC-CO-10000039,Compact Desktop Copier,Technology,Copiers
+TEC-MA-10000040,Label Printer Pro,Technology,Machines
+TEC-MA-10000041,Thermal Receipt Printer,Technology,Machines
+TEC-MA-10000042,Heavy Duty Laminator,Technology,Machines
+TEC-PH-10000030,Smartphone 128GB Black,Technology,Phones
+TEC-PH-10000031,Business Phone Handset,Technology,Phones
+TEC-PH-10000032,Wireless Headset Pro,Technology,Phones
+TEC-PH-10000033,Smartphone Rugged Edition,Technology,Phones

@@ -1,0 +1,438 @@
+{
+  "audit_before_cleaning": {
+    "rows_raw": 10054,
+    "exact_duplicate_rows": 60,
+    "null_cells_by_column": {
+      "Order Date": 1,
+      "Customer Name": 35,
+      "Segment": 30,
+      "Region": 20,
+      "Discount": 25,
+      "Profit": 8,
+      "Payment Mode": 40
+    },
+    "negative_sales_rows": 14,
+    "zero_sales_rows": 4,
+    "invalid_order_dates": 5,
+    "future_order_dates": 1,
+    "category_variants_raw": [
+      "FURNITURE",
+      "Furniture",
+      "OFFICE SUPPLIES",
+      "Office Supplies",
+      "TECHNOLOGY",
+      "Technology",
+      "furniture ",
+      "office supplies ",
+      "technology "
+    ],
+    "region_variants_raw": [
+      "Central",
+      "East",
+      "South",
+      "West",
+      "central",
+      "east",
+      "south",
+      "west"
+    ]
+  },
+  "cleaning_log": [
+    {
+      "step": "Remove exact duplicate rows",
+      "rows_before": 10054,
+      "rows_after": 9994,
+      "rows_affected": 60
+    },
+    {
+      "step": "Drop rows with unrecoverable invalid Order Date",
+      "rows_before": 9994,
+      "rows_after": 9992,
+      "rows_affected": 2
+    },
+    {
+      "step": "Drop rows with negative or zero Sales",
+      "rows_before": 9992,
+      "rows_after": 9974,
+      "rows_affected": 18
+    },
+    {
+      "step": "Drop rows with missing Profit",
+      "rows_before": 9974,
+      "rows_after": 9966,
+      "rows_affected": 8
+    },
+    {
+      "step": "Drop rows with invalid Quantity/Discount",
+      "rows_before": 9966,
+      "rows_after": 9966,
+      "rows_affected": 0
+    }
+  ],
+  "kpis": {
+    "total_sales": 5408541.6,
+    "total_profit": 720415.35,
+    "total_orders": 4497,
+    "total_quantity": 29913,
+    "profit_margin_pct": 13.32,
+    "avg_order_value": 1202.7,
+    "line_items": 9966,
+    "top10_products": [
+      {
+        "rank": 1,
+        "product": "Laser Copier Workstation",
+        "sales": 1036962.57
+      },
+      {
+        "rank": 2,
+        "product": "Compact Desktop Copier",
+        "sales": 505391.16
+      },
+      {
+        "rank": 3,
+        "product": "Smartphone Rugged Edition",
+        "sales": 343757.27
+      },
+      {
+        "rank": 4,
+        "product": "Oak Conference Table",
+        "sales": 336868.7
+      },
+      {
+        "rank": 5,
+        "product": "Smartphone 128GB Black",
+        "sales": 322610.5
+      },
+      {
+        "rank": 6,
+        "product": "Executive Leather Chair",
+        "sales": 271748.26
+      },
+      {
+        "rank": 7,
+        "product": "Adjustable Standing Desk",
+        "sales": 240743.12
+      },
+      {
+        "rank": 8,
+        "product": "Round Meeting Table",
+        "sales": 213962.51
+      },
+      {
+        "rank": 9,
+        "product": "Corner Bookcase Unit",
+        "sales": 163757.92
+      },
+      {
+        "rank": 10,
+        "product": "Label Printer Pro",
+        "sales": 158509.77
+      }
+    ],
+    "category": [
+      {
+        "Category": "Furniture",
+        "sales": 2020838.57,
+        "profit": 85276.06,
+        "margin_%": 4.22
+      },
+      {
+        "Category": "Office Supplies",
+        "sales": 427352.55,
+        "profit": 66718.23,
+        "margin_%": 15.61
+      },
+      {
+        "Category": "Technology",
+        "sales": 2960350.48,
+        "profit": 568421.06,
+        "margin_%": 19.2
+      }
+    ],
+    "subcategory": [
+      {
+        "Sub-Category": "Accessories",
+        "sales": 204718.61,
+        "profit": 41671.32,
+        "margin_%": 20.36
+      },
+      {
+        "Sub-Category": "Appliances",
+        "sales": 157270.17,
+        "profit": 29953.21,
+        "margin_%": 19.05
+      },
+      {
+        "Sub-Category": "Art",
+        "sales": 17058.19,
+        "profit": 4630.09,
+        "margin_%": 27.14
+      },
+      {
+        "Sub-Category": "Binders",
+        "sales": 28162.42,
+        "profit": 8930.85,
+        "margin_%": 31.71
+      },
+      {
+        "Sub-Category": "Bookcases",
+        "sales": 396261.48,
+        "profit": 4204.57,
+        "margin_%": 1.06
+      },
+      {
+        "Sub-Category": "Chairs",
+        "sales": 628195.56,
+        "profit": 81314.61,
+        "margin_%": 12.94
+      },
+      {
+        "Sub-Category": "Copiers",
+        "sales": 1542353.73,
+        "profit": 443407.53,
+        "margin_%": 28.75
+      },
+      {
+        "Sub-Category": "Furnishings",
+        "sales": 107016.05,
+        "profit": 22908.63,
+        "margin_%": 21.41
+      },
+      {
+        "Sub-Category": "Machines",
+        "sales": 396169.09,
+        "profit": -500.52,
+        "margin_%": -0.13
+      },
+      {
+        "Sub-Category": "Paper",
+        "sales": 39229.11,
+        "profit": 12842.72,
+        "margin_%": 32.74
+      },
+      {
+        "Sub-Category": "Phones",
+        "sales": 817109.05,
+        "profit": 83842.73,
+        "margin_%": 10.26
+      },
+      {
+        "Sub-Category": "Storage",
+        "sales": 185632.66,
+        "profit": 10361.36,
+        "margin_%": 5.58
+      },
+      {
+        "Sub-Category": "Tables",
+        "sales": 889365.48,
+        "profit": -23151.75,
+        "margin_%": -2.6
+      }
+    ],
+    "yearly": [
+      {
+        "Year": 2022,
+        "sales": 1044688.0,
+        "profit": 126358.03,
+        "orders": 904
+      },
+      {
+        "Year": 2023,
+        "sales": 1296221.97,
+        "profit": 172890.55,
+        "orders": 1064
+      },
+      {
+        "Year": 2024,
+        "sales": 1506409.44,
+        "profit": 207127.22,
+        "orders": 1233
+      },
+      {
+        "Year": 2025,
+        "sales": 1561222.19,
+        "profit": 214039.55,
+        "orders": 1296
+      }
+    ],
+    "monthly_sales_first6": [
+      {
+        "Month Start": "2022-01-01",
+        "sales": 79621.5
+      },
+      {
+        "Month Start": "2022-02-01",
+        "sales": 39355.73
+      },
+      {
+        "Month Start": "2022-03-01",
+        "sales": 78409.28
+      },
+      {
+        "Month Start": "2022-04-01",
+        "sales": 92341.39
+      },
+      {
+        "Month Start": "2022-05-01",
+        "sales": 58770.09
+      },
+      {
+        "Month Start": "2022-06-01",
+        "sales": 86855.69
+      }
+    ],
+    "region": [
+      {
+        "Region": "Central",
+        "sales": 1285032.71,
+        "profit": 91911.06,
+        "orders": 1101,
+        "margin_%": 7.15
+      },
+      {
+        "Region": "East",
+        "sales": 1578776.59,
+        "profit": 251574.07,
+        "orders": 1326,
+        "margin_%": 15.93
+      },
+      {
+        "Region": "South",
+        "sales": 829733.4,
+        "profit": 90817.43,
+        "orders": 672,
+        "margin_%": 10.95
+      },
+      {
+        "Region": "West",
+        "sales": 1714998.9,
+        "profit": 286112.79,
+        "orders": 1398,
+        "margin_%": 16.68
+      }
+    ],
+    "discount_bands": [
+      {
+        "band": "0%",
+        "sales": 2858187.12,
+        "profit": 647161.13,
+        "lines": 4709,
+        "margin_%": 22.64
+      },
+      {
+        "band": "1-10%",
+        "sales": 977652.37,
+        "profit": 133162.67,
+        "lines": 1805,
+        "margin_%": 13.62
+      },
+      {
+        "band": "11-20%",
+        "sales": 1031855.75,
+        "profit": 27304.87,
+        "lines": 2052,
+        "margin_%": 2.65
+      },
+      {
+        "band": "21-30%",
+        "sales": 315627.66,
+        "profit": -28209.52,
+        "lines": 722,
+        "margin_%": -8.94
+      },
+      {
+        "band": ">30%",
+        "sales": 225218.7,
+        "profit": -59003.8,
+        "lines": 678,
+        "margin_%": -26.2
+      }
+    ],
+    "segment": [
+      {
+        "Segment": "Consumer",
+        "sales": 2704998.56,
+        "profit": 359228.28
+      },
+      {
+        "Segment": "Corporate",
+        "sales": 1625360.73,
+        "profit": 216017.01
+      },
+      {
+        "Segment": "Home Office",
+        "sales": 1078182.31,
+        "profit": 145170.06
+      }
+    ],
+    "payment_mode": [
+      {
+        "Payment Mode": "Cash on Delivery",
+        "sales": 563743.17,
+        "orders": 482
+      },
+      {
+        "Payment Mode": "Credit Card",
+        "sales": 1595579.55,
+        "orders": 1362
+      },
+      {
+        "Payment Mode": "Debit Card",
+        "sales": 1124042.82,
+        "orders": 903
+      },
+      {
+        "Payment Mode": "Net Banking",
+        "sales": 512232.92,
+        "orders": 454
+      },
+      {
+        "Payment Mode": "PayPal",
+        "sales": 598013.92,
+        "orders": 494
+      },
+      {
+        "Payment Mode": "UPI",
+        "sales": 1011057.01,
+        "orders": 794
+      },
+      {
+        "Payment Mode": "Unknown",
+        "sales": 3872.21,
+        "orders": 8
+      }
+    ],
+    "loss_products": [
+      {
+        "Product Name": "Oak Conference Table",
+        "sales": 336868.7,
+        "profit": -10420.43
+      },
+      {
+        "Product Name": "Round Meeting Table",
+        "sales": 213962.51,
+        "profit": -4787.25
+      },
+      {
+        "Product Name": "Adjustable Standing Desk",
+        "sales": 240743.12,
+        "profit": -4537.84
+      },
+      {
+        "Product Name": "Folding Training Table",
+        "sales": 97791.15,
+        "profit": -3406.23
+      },
+      {
+        "Product Name": "Heavy Duty Laminator",
+        "sales": 97149.14,
+        "profit": -1039.94
+      },
+      {
+        "Product Name": "5-Shelf Wooden Bookcase",
+        "sales": 133273.21,
+        "profit": -86.93
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Sales Dashboard - Navy & Teal",
+  "dataColors": ["#2563EB", "#0EA5A4", "#F59E0B", "#7C3AED", "#EF4444", "#10B981", "#64748B", "#EC4899"],
+  "background": "#F8FAFC",
+  "foreground": "#0F172A",
+  "tableAccent": "#2563EB",
+  "good": "#059669",
+  "neutral": "#F59E0B",
+  "bad": "#DC2626",
+  "textClasses": {
+    "title":   { "fontFace": "Segoe UI Semibold", "fontSize": 14, "color": "#0F172A" },
+    "label":   { "fontFace": "Segoe UI", "fontSize": 10, "color": "#475569" },
+    "callout": { "fontFace": "Segoe UI Semibold", "fontSize": 26, "color": "#0F172A" }
+  },
+  "visualStyles": {
+    "*": { "*": {
+      "background": [{ "color": { "solid": { "color": "#FFFFFF" } }, "transparency": 0 }],
+      "border": [{ "show": true, "color": { "solid": { "color": "#E2E8F0" } }, "radius": 8 }]
+    } }
+  }
+}
